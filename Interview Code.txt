@@ -1,0 +1,16 @@
+The Code Count the total number of Domestic deliveries in the database.
+COUNT(*) AS DOMESTIC_COUNT FROM `flawless-parity-381511.Olowo.Shipment_Details`
+WHERE SH_DOMAIN= "Domestic"
+
+Determine the number of clients for each customer type (Wholesale, Internal Goods, Retail), and return the results in descending order.
+
+SELECT C_TYPE, COUNT(C_TYPE) AS COUNT_C_TYPE
+FROM `flawless-parity-381511.Olowo.Customer`
+GROUP BY C_TYPE
+ORDER BY COUNT_C_TYPE DESC
+
+
+SELECT C_NAME,C_EMAIL_ID
+FROM `flawless-parity-381511.Olowo.Customer` C
+INNER JOIN `flawless-parity-381511.Olowo.Membership` M
+ON C.M_ID= M.M_ID
